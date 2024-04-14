@@ -1,4 +1,3 @@
-import "./comments.css";
 import { useSelector, useDispatch } from "react-redux";
 import { useState } from "react";
 import Comment from "./comment";
@@ -31,7 +30,7 @@ const Comments = () => {
 			<form onSubmit={handleSubmit}>
 				<label>
 					<div className="text-[30px] font-[1000] text-white mb-3 text-center">
-						Infinitly Nested Comment Applicatio
+						Infinite Nested Comment Application
 					</div>
 				</label>
 				<input
