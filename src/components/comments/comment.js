@@ -71,7 +71,7 @@ const Comment = ({ data }) => {
 				) : (
 					<div className="flex justify-start items-start mt-4 gap-1">
 						<button
-							className="px-3 py-1.5 text-[10px] border-2 rounded-xl bg-blue-700 border-white text-white hover:text-blue-700 hover:bg-transparent hover:border-blue-700 transition-all ease-in-out duration-300"
+							className={`px-3 py-1.5 text-[10px] ${like !== "👍" && "border-2 rounded-xl bg-blue-700 border-white text-white hover:text-blue-700 hover:bg-transparent hover:border-blue-700 transition-all ease-in-out duration-300"}`}
 							onClick={() => handleLike()}
 						>
 							{like}
