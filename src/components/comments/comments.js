@@ -32,7 +32,7 @@ const Comments = () => {
         <header className="text-[30px] font-[1000] text-center">
           Comment Cascade
         </header>
-		<p className="text-sm">(A task-based application leveraging recursion to implement infinite threading)</p>	
+		<p className="text-sm text-center">(A task-based application leveraging recursion to implement infinite threading)</p>	
       </div>
       <form
         className="flex justify-start items-center gap-4"
