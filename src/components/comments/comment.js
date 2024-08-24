@@ -9,7 +9,7 @@ import { FaHeart } from "react-icons/fa";
 import { RxCross2 } from "react-icons/rx";
 import { MdOutlineReply } from "react-icons/md";
 
-const Comment = ({ data }) => {
+const Comment = ({ data, profiles }) => {
   const { commentRecord } = useSelector((store) => store.comment);
   const [like, setLike] = useState(false);
   const [replyOn, setReplyOn] = useState(false);
@@ -20,30 +20,9 @@ const Comment = ({ data }) => {
     setLike(!like);
   };
 
-  const profiles = [
-    { name: "Elon Musk", src: "https://i.redd.it/tm7ced4yniib1.jpg" },
-    {
-      name: "Jeff Bezos",
-      src: "https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcT56TmMRi1_9KnGuG1BTTxrL1YPKIkwNgD4_HW5yrPUtPcz2RUA",
-    },
-    {
-      name: "Bill Gates",
-      src: "https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcT2w_bADOkCd-crL7kYomj8CG7bvFyk3iFF_3iTaPp8B6UlQ5e1MB5kkpDrgqCjmRFPqftVfTpRvmL5Qt33ARxqj5FKwHZPBYgGBDOwxw",
-    },
-    {
-      name: "Warren Buffett",
-      src: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQg-iE_tQAmUGJ_4J4C3HTflkMD5C61GYkKgd7fP0-NhuoO9iPd",
-    },
-    {
-      name: "Jack Ma",
-      src: "https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcRkJ1YuT4NeBxSO6Tss4Fg4HBrgJYiAnU74acifpzAJEAnHhNr9",
-    },
-  ];
-
   const hanldleReplySubmit = () => {
     if (reply !== "") {
       const random = Math.floor(Math.random() * 5);
-      console.log(random);
       dispatch(
         handleReply({
           text: reply,
@@ -131,7 +110,7 @@ const Comment = ({ data }) => {
           {commentRecord.map((reply) => {
             return (
               reply.parentId === data.id && (
-                <Comment key={reply.id} data={reply} />
+                <Comment profiles={profiles} key={reply.id} data={reply} />
               )
             );
           })}
