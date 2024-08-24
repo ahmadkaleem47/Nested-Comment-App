@@ -45,6 +45,7 @@ const CommentSlice = createSlice({
           id: data.id,
           parentId: data.parentId,
           child: payload.parentId === data.id ? true : data.child,
+          profile: data?.profile
         };
       });
     },
